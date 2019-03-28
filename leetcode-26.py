@@ -37,6 +37,18 @@ for (int i = 0; i < len; i++) {
 
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
+        
+        if len(nums) == 0:return 0
+        else:
+            j = 0
+            for i, num in enumerate(nums):
+                if num != nums[j]:
+                    j +=1   # 置顶, 标志位 的移动很重要
+                    nums[j] = num
+            return j+1
+   
+        
+        ===============
         if len(nums) == 0:
             return 0
         else:
